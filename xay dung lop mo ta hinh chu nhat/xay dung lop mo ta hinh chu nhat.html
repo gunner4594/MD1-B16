@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1000" height="500"></canvas>
+<script>
+  let Rectangle = function (length, width) {
+    this.length = length;
+    this.width = width;
+    this.getArea = function () {
+      return length * width;
+    }
+    this.getPerimeter = function () {
+      return 2*(length + width)
+    }
+    this.getImage = function () {
+        let c = document.getElementById('myCanvas');
+        let ctx = c.getContext('2d');
+        ctx.fillRect(10, 10, width, length);
+        ctx.fillStyle = '#fa4b2a';
+    }
+  }
+  let rectangule = new Rectangle(300,150);
+  let area = rectangule.getArea();
+  let perimeter = rectangule.getPerimeter();
+  let image = rectangule.getImage();
+  document.write(image + '<br>')
+  document.write('Area: ' + area + ' perimeter: ' + perimeter)
+</script>
+</body>
+</html>
