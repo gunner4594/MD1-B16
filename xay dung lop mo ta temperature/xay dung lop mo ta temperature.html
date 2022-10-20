@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả temperature</title>
+</head>
+<body>
+<script>
+  let Temperature = function (celcius) {
+    this.celcius = celcius;
+    this.changeToF = function () {
+      return 9/5 * celcius + 32;
+    }
+    this.changeToK = function () {
+      return celcius + 273.15;
+    }
+  };
+  let temperature = new Temperature(25);
+  let fahrenheit = temperature.changeToF();
+  let kevin = temperature.changeToK();
+  document.write('Fahrenheit: ' + fahrenheit + '<br>');
+  document.write('Kevin: ' + kevin);
+</script>
+</body>
+</html>
